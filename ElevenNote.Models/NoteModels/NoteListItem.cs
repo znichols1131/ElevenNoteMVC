@@ -13,6 +13,6 @@ namespace ElevenNote.Models.NoteModels
         public string Title { get; set; }
 
         [Display(Name = "Created")]
-        public DateTimeOffset dateTimeOffset { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }
