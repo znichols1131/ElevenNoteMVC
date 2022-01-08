@@ -3,7 +3,7 @@ namespace ElevenNote.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -12,10 +12,10 @@ namespace ElevenNote.Data.Migrations
                 c => new
                     {
                         NoteId = c.Int(nullable: false, identity: true),
-                        guid = c.Guid(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
                         Title = c.String(nullable: false),
                         Content = c.String(nullable: false),
-                        dateTimeOffset = c.DateTimeOffset(nullable: false, precision: 7),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.NoteId);
